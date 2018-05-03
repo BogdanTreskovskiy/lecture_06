@@ -1,7 +1,13 @@
 window.every = function (array, callback) {
+  var result = true;
+
   for (var i = 0; i < array.length; i++) {
-    callback(array[i], i, array);
+    if (!callback(array[i], i, array)) {
+      result = false;
+      break;
+    }
   }
+  return result;
 };
 window.some = function (array, callback) {};
 window.forEach = function (array, callback) {
