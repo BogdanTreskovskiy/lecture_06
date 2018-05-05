@@ -34,4 +34,10 @@ window.filter = function (array, callback) {
   }
   return arr;
 };
-window.map = function (array, callback) {};
+window.map = function (array, callback) {
+  var result = [];
+  for (var i = 0; i < array.length; i++) {
+    result.push(callback(array[i], i, array))
+  }
+  return result;
+};
