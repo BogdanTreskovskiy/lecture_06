@@ -25,5 +25,13 @@ window.forEach = function (array, callback) {
     callback(array[i], i, array);
   }
 };
-window.filter = function (array, callback) {};
+window.filter = function (array, callback) {
+  var arr = [];
+  for (var i = 0; i < array.length; i++) {
+    if (callback(array[i], i, array)) {
+      arr.push(array[i])
+    }
+  }
+  return arr;
+};
 window.map = function (array, callback) {};
