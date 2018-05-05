@@ -1,6 +1,5 @@
 window.every = function (array, callback) {
   var result = true;
-
   for (var i = 0; i < array.length; i++) {
     if (!callback(array[i], i, array)) {
       result = false;
@@ -11,7 +10,6 @@ window.every = function (array, callback) {
 };
 window.some = function (array, callback) {
   var result = false;
-
   for (var i = 0; i < array.length; i++) {
     if (callback(array[i], i, array)) {
       result = true;
@@ -29,7 +27,7 @@ window.filter = function (array, callback) {
   var arr = [];
   for (var i = 0; i < array.length; i++) {
     if (callback(array[i], i, array)) {
-      arr.push(array[i])
+      arr.push(array[i]);
     }
   }
   return arr;
@@ -37,7 +35,7 @@ window.filter = function (array, callback) {
 window.map = function (array, callback) {
   var result = [];
   for (var i = 0; i < array.length; i++) {
-    result.push(callback(array[i], i, array))
+    result.push(callback(array[i], i, array));
   }
   return result;
 };
